@@ -19,6 +19,7 @@ import DiceSix from './Assests/dice6.png'
 const App = () => {
   
   const [uri, setUri] = useState(DiceOne);
+  const [uri1, setUri1] = useState(DiceOne);
 
   const playButtonTapped =() =>{
     let randomNumber = Math.floor(Math.random()*6) +1;
@@ -47,14 +48,41 @@ const App = () => {
           setUri(DiceOne)
           break;
     }
-    
+    let randomNumber1 = Math.floor(Math.random()*6) +1;
+
+    switch(randomNumber1){
+      case 1:
+        setUri1(DiceOne)
+        break;
+      case 2:
+        setUri1(DiceTwo)
+        break;
+      case 3:
+        setUri1(DiceThree)
+        break;
+      case 4:
+        setUri1(DiceFour)
+        break;
+      case 5:
+        setUri1(DiceFive)
+        break;
+      case 6:
+        setUri1(DiceSix)
+        break;
+
+      default:
+          setUri1(DiceOne)
+          break;
+    }
   };
+ 
   return(
 <>
-<StatusBar style={{backgroundColor:'rgb(0,0,0)'}} />
+<StatusBar style={[Styles.status,{backgroundColor:'black'}]} />
 <View style={Styles.container}>
 <Pressable onPress={playButtonTapped}>
 <Image style={Styles.image} source={uri} />
+<Image style={Styles.image} source={uri1} />
 </Pressable>
  
  <Pressable onPress={playButtonTapped}>
@@ -89,5 +117,8 @@ const Styles = StyleSheet.create({
   image:{
     width: 200,
     height: 200,
+  },
+  status:{
+    backgroundColor: "rgb(10,10,10)",
   }
 })
