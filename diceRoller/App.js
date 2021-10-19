@@ -6,6 +6,7 @@ import {
   Image,
   View,
   StatusBar,
+  Pressable,
 } from 'react-native'
 import DiceOne from './Assests/dice1.png'
 import DiceTwo from './Assests/dice2.png'
@@ -46,15 +47,19 @@ const App = () => {
           setUri(DiceOne)
           break;
     }
+    
   };
   return(
 <>
 <StatusBar style={{backgroundColor:'rgb(0,0,0)'}} />
 <View style={Styles.container}>
- <Image style={Styles.image} source={uri} />
- <TouchableOpacity onPress={playButtonTapped}>
+<Pressable onPress={playButtonTapped}>
+<Image style={Styles.image} source={uri} />
+</Pressable>
+ 
+ <Pressable onPress={playButtonTapped}>
     <Text style={Styles.text}>Play Game</Text>
-    </TouchableOpacity>
+    </Pressable>
 </View>
 
 </>
