@@ -63,14 +63,5 @@ const styles = StyleSheet.create({
     color: "#FFFF",
     borderRadius:15,
     textTransform:"uppercase",
-  },
-  text2:{
-    fontSize:30,
-    backgroundColor:"#BB2CD9",
-    paddingVertical:10,
-    paddingHorizontal:0,
-    color: "#FFFF",
-    borderRadius:15,
-    textTransform:"uppercase",
   }
 });
