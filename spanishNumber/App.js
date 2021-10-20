@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Text, 
   View,
@@ -6,8 +6,8 @@ import {
   Image, 
   StyleSheet,
   TouchableOpacity,
-} from 'react-native';
-import Sound from 'react-native-sound';
+} from 'react-native'
+import Sound from 'react-native-sound'
 
 const soundList = [
   require('./assests/one.wav'),
@@ -23,13 +23,32 @@ const soundList = [
 ];
 
 const App = () => {
+  const playSound = (sound) =>{
+    const soundVar = new Sound(sound, Sound.MAIN_BUNDLE, (err) => {
+      if (err) {
+        console.log("Not able to play");
+      }
+    });
+
+    setTimeout(() => {
+      soundVar.play();
+    }, 1000)
+
+    soundVar.release();
+  };
+
   return (
     <ScrollView style={Styles.container}>
       <Image source={require('./assests/logo.png')} style={Styles.logo} />
       <View style={Styles.gridContainer}>
-      {soundList.map((Sound) =>(
-        <TouchableOpacity key={Sound}  style={Styles.box}>
-        <Text style={Styles.text}>{Sound}</Text>
+      {soundList.map((sound) =>(
+        <TouchableOpacity 
+        key={sound}
+       style={Styles.box}
+       onPress={() => {
+        playSound(sound);
+       }}>
+        <Text style={Styles.text}>{sound}</Text>
         </TouchableOpacity>
       ))}
       </View>
