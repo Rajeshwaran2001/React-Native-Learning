@@ -32,7 +32,7 @@ const App = () => {
 
     setTimeout(() => {
       soundVar.play();
-    }, 1000)
+    }, 100)
 
     soundVar.release();
   };
