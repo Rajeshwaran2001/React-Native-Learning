@@ -78,7 +78,7 @@ const App = () => {
  
   return(
 <>
-<StatusBar style={[Styles.status,{backgroundColor:'black'}]} />
+<StatusBar style={{backgroundColor :'#BB2CD9'}} />
 <View style={Styles.container}>
 <Pressable onPress={playButtonTapped}>
 <Image style={Styles.image} source={uri} />
